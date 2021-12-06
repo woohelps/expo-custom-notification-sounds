@@ -81,24 +81,27 @@ async function sendPushNotification(expoPushToken) {
        body: JSON.stringify(message),
      });
      */
-
-    await fetch('https://fcm.googleapis.com/fcm/send', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            Authorization: `key=AAAAVqXLbNU:APA91bHTGb9Ow5EyjHQI1YNxKiXbM_DFMBImV_uscXZrN-gV3bZDmO6u3vRcYsnd1GGQRIin5WSb3xw3oMNk_7FIuxXcna8xfLHScMRxEur1SXHjQS-4NYFDn_5NvUYBfAYxBexV3YsY`,
-        },
-        body: JSON.stringify({
-            to: expoPushToken,
-            priority: 'normal',
-            data: {
-                experienceId: '@yourExpoUsername/yourProjectSlug',
-                title: "\uD83D\uDCE7 You've got mail",
-                message: 'Hello world! \uD83C\uDF10',
+    try {
+        const result = await fetch('https://fcm.googleapis.com/fcm/send', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: `key=AAAAVqXLbNU:APA91bHTGb9Ow5EyjHQI1YNxKiXbM_DFMBImV_uscXZrN-gV3bZDmO6u3vRcYsnd1GGQRIin5WSb3xw3oMNk_7FIuxXcna8xfLHScMRxEur1SXHjQS-4NYFDn_5NvUYBfAYxBexV3YsY`,
             },
-        }),
-    });
-
+            body: JSON.stringify({
+                to: expoPushToken,
+                priority: 'normal',
+                data: {
+                    experienceId: '@woohelps/expo-custom-notification-sounds',
+                    title: "\uD83D\uDCE7 You've got mail",
+                    message: 'Hello world! \uD83C\uDF10',
+                },
+            }),
+        });
+        console.log(result);
+    } catch (e) {
+        console.log(e);
+    }
 }
 
 async function registerForPushNotificationsAsync() {
