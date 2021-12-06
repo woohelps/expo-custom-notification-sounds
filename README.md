@@ -31,4 +31,4 @@
 * Confirm that my API key in google-services.json has the correct "API restrictions" in the Google Cloud Platform API Credentials console.
   ![my API key in google-services](https://overseas-toronto-1252412068.cos.na-toronto.myqcloud.com/apk/currrent_key.png)
   ![API Key restrictions setting](https://overseas-toronto-1252412068.cos.na-toronto.myqcloud.com/apk/api_key_restrictions_setting.png)
-* run `eas build --platform android`. create android native folders
+* According [this](https://docs.expo.dev/guides/config-plugins/) run `expo prebuild`. create android native folders
