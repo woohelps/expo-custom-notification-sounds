@@ -14,7 +14,9 @@
       [
         "expo-notifications",
         {
-          "sounds": ["./assets/mySoundFile.wav"]
+          "sounds": [
+            "./assets/mySoundFile.wav"
+          ]
         }
       ]
     ],
@@ -32,7 +34,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.example.notification.expo"
     },
     "web": {
       "favicon": "./assets/favicon.png"
