@@ -177,3 +177,8 @@ async function registerForPushNotificationsAsync() {
 ![FCM-SERVER-KEY](https://overseas-toronto-1252412068.cos.na-toronto.myqcloud.com/apk/fcm-server-key.png)
 
 The complete code is on the [Github woohelps/expo-custom-notification-sounds.git](https://github.com/woohelps/expo-custom-notification-sounds.git)
+
+
+## Updated:
+Refer to this [Custom notification sounds doesn’t work on EAS built app.](https://forums.expo.dev/t/custom-notification-sounds-doesn-t-work-on-eas-built-app/55486):
+and Updated the Channel code, then try to run `expo run:android`, but return *BUILD FAILED*

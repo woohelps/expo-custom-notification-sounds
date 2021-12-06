@@ -126,11 +126,24 @@ async function registerForPushNotificationsAsync() {
     }
 
     if (Platform.OS === 'android') {
-        Notifications.setNotificationChannelAsync('default', {
-            name: 'default',
+        await Notifications.setNotificationChannelAsync("new-one", {
+            name: "default",
             importance: Notifications.AndroidImportance.MAX,
             vibrationPattern: [0, 250, 250, 250],
-            lightColor: '#FF231F7C',
+            lightColor: "#FF231F7C",
+            sound: "mySoundFile.wav",
+        });
+        await Notifications.scheduleNotificationAsync({
+            content: {
+                title: "You've got mail! 📬",
+                body: "Here is the notification body",
+                data: { data: "goes here" },
+                sound: "mySoundFile.wav",
+            },
+            trigger: {
+                seconds: 2,
+                channelId: "new-one", // <- for Android 8.0+, see definition above
+            },
         });
     }
 
