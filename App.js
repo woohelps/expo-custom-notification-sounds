@@ -82,7 +82,7 @@ async function sendPushNotification(expoPushToken) {
      });
      */
     try {
-        const result = await fetch('https://fcm.googleapis.com/fcm/send', {
+        await fetch('https://fcm.googleapis.com/fcm/send', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -93,12 +93,11 @@ async function sendPushNotification(expoPushToken) {
                 priority: 'normal',
                 data: {
                     experienceId: '@woohelps/expo-custom-notification-sounds',
-                    title: "\uD83D\uDCE7 You've got mail",
+                    title: "\uD83D\uDCE7 You've got mail" + new Date().getMinutes(),
                     message: 'Hello world! \uD83C\uDF10',
                 },
             }),
         });
-        console.log(result);
     } catch (e) {
         console.log(e);
     }
