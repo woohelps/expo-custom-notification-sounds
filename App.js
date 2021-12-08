@@ -131,14 +131,14 @@ async function registerForPushNotificationsAsync() {
             importance: Notifications.AndroidImportance.MAX,
             vibrationPattern: [0, 250, 250, 250],
             lightColor: "#FF231F7C",
-            sound: "mySoundFile.wav",
+            sound: "test.wav",
         });
         await Notifications.scheduleNotificationAsync({
             content: {
                 title: "You've got mail! 📬",
                 body: "Here is the notification body",
                 data: { data: "goes here" },
-                sound: "mySoundFile.wav",
+                sound: "test.wav",
             },
             trigger: {
                 seconds: 2,

@@ -10,7 +10,7 @@
       [
         "expo-notifications",
         {
-          "sounds": ["./assets/mySoundFile.wav"]
+          "sounds": ["./assets/test.wav"]
         }
       ]
     ]
